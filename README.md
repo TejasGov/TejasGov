@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I'm Your Name 👋</h1>
+<h1 align="center">Hi, I'm Tejas 👋</h1>
 
 <p align="center">
   <strong>Developer • Builder • Lifelong learner</strong>
