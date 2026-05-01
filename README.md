@@ -71,6 +71,10 @@ Outside of coding, I like exploring design, games, and creative software. I’m 
 ## 📊 GitHub Stats:
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=TejasGov&show_icons=true&theme=dark&hide_border=true" alt="Tejas's GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TejasGov&layout=compact&theme=dark&hide_border=true" alt="Top languages" />
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api?username=TejasGov&show_icons=true&theme=tokyonight&hide_border=true" alt="Tejas's GitHub stats" />
+  </a>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="200" align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=TejasGov&layout=compact&langs_count=8&card_width=320&theme=tokyonight&hide_border=true" alt="Top languages" />
+  </a>
 </p>
