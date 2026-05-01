@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/yourusername">
-    <img src="https://komarev.com/ghpvc/?username=yourusername&style=flat-square" alt="Profile views" />
+  <a href="https://github.com/TejasGov">
+    <img src="https://komarev.com/ghpvc/?username=TejasGov&style=flat-square" alt="Profile views" />
   </a>
   <a href="https://www.linkedin.com/in/your-linkedin/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin&logoColor=white" />
@@ -20,10 +20,7 @@
 
 ## About me
 
-- 🔭 I’m currently working on **your current project**
-- 🌱 I’m learning **your current learning focus**
-- 💬 Ask me about **your favorite topics**
-- ⚡ Fun fact: **something memorable about you**
+I’m a developer who enjoys building things that are both useful and visually polished. I like working across the stack, from creating clean frontend experiences with React and Next.js to building backend systems with Node.js, Express, MongoDB, and Postgres.I’m especially interested in projects that combine creativity with technology, whether that means web apps, real-time features, game development, UI design, or interactive experiences. I enjoy learning new tools, improving my workflow, and turning ideas into projects that feel complete.Outside of coding, I like exploring design, games, and creative software. I’m always looking for ways to grow as a developer and build projects that are fun, practical, and meaningful.
 
 ---
 ## 💻 Tech Stack:
@@ -43,11 +40,7 @@
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white" />
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Postgres-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" />
-  <img src="https://img.shields.io/badge/Unreal%20Engine-313131?style=for-the-badge&logo=unrealengine&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </p>
 
@@ -56,10 +49,10 @@
 ## 🌐 Socials:
 
 <p>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">
+  <a href="https://www.linkedin.com/in/tejas-govind-29520a2b2/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" />
   </a>
-  <a href="mailto:YOUR-EMAIL@example.com">
+  <a href="mailto:tejasgov2005@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" />
   </a>
 </p>
@@ -69,6 +62,6 @@
 ## 📊 GitHub Stats:
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR-GITHUB-USERNAME&show_icons=true&theme=github_dark&hide_border=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR-GITHUB-USERNAME&layout=compact&theme=github_dark&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=TejasGov&show_icons=true&theme=github_dark&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TejasGov&layout=compact&theme=github_dark&hide_border=true" />
 </p>
