@@ -1,30 +1,61 @@
-<h1 align="center">Hi, I'm Tejas 👋</h1>
+<div align="left">
+  <img align="right" src="https://media1.tenor.com/m/mKfeCtD5EukAAAAC/the-office-the.gif" width="320" alt="The Office GIF" />
 
-<p align="center">
-  <strong>Developer • Builder • Lifelong learner</strong>
-</p>
+  <p style="font-size: 36px; font-weight: 700; margin-bottom: 0;">
+    Hi, I'm Tejas 👋
+  </p>
 
-<p align="center">
-  <a href="https://github.com/TejasGov">
-    <img src="https://komarev.com/ghpvc/?username=TejasGov&style=flat-square" alt="Profile views" />
-  </a>
-  <a href="https://www.linkedin.com/in/tejas-govind-29520a2b2/">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:tejasgov2005@gmail.com">
-    <img src="https://img.shields.io/badge/Email-red?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</p>
+  <p>
+    <strong>Developer • Builder • Lifelong learner</strong>
+  </p>
+
+  <p>
+    <a href="https://github.com/TejasGov">
+      <img src="https://komarev.com/ghpvc/?username=TejasGov&style=flat-square" alt="Profile views" />
+    </a>
+    <a href="https://www.linkedin.com/in/tejas-govind-29520a2b2/">
+      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    </a>
+    <a href="mailto:tejasgov2005@gmail.com">
+      <img src="https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail" />
+    </a>
+  </p>
+
+  <p>
+    <a href="https://www.youtube.com/@tejasgovind">
+      <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" />
+    </a>
+    <a href="https://www.instagram.com/tejasgovind_/">
+      <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" />
+    </a>
+    <a href="https://www.kaggle.com/tejasgovind">
+      <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white" alt="Kaggle" />
+    </a>
+    <a href="https://tejasgovind.wordpress.com/">
+      <img src="https://img.shields.io/badge/WordPress-21759B?style=flat-square&logo=wordpress&logoColor=white" alt="WordPress" />
+    </a>
+    <a href="https://x.com/TejasGovin17982">
+      <img src="https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white" alt="X" />
+    </a>
+    <a href="https://www.hackerrank.com/profile/tejasgovind3">
+      <img src="https://img.shields.io/badge/HackerRank-00EA64?style=flat-square&logo=hackerrank&logoColor=white" alt="HackerRank" />
+    </a>
+  </p>
+</div>
+
+<br clear="right" />
 
 ---
 
 ## About me
 
-I’m a developer who enjoys building things that are both useful and visually polished. I like working across the stack, from creating clean frontend experiences with React and Next.js to building backend systems with Node.js, Express, MongoDB, and Postgres.
+I’m Tejas, a developer who likes building things that feel as good as they work. I enjoy working across the stack, from clean frontend interfaces with React and Next.js to backend systems with Node.js, Express, MongoDB, and SQL.
 
-I’m especially interested in projects that combine creativity with technology, whether that means web apps, real-time features, game development, UI design, or interactive experiences. I enjoy learning new tools, improving my workflow, and turning ideas into projects that feel complete.
+I’m drawn to projects where engineering meets creativity. That could be a full-stack web app, a real-time feature, a game prototype, a machine learning experiment, or a polished UI that makes an idea feel alive. I like figuring things out, learning fast, and turning rough ideas into projects that are actually usable.
 
-Outside of coding, I like exploring design, games, and creative software. I’m always looking for ways to grow as a developer and build projects that are fun, practical, and meaningful.
+Outside of code, I’m into design, games, content creation, and exploring new tools that help me build better. I share my work across GitHub, YouTube, Kaggle, WordPress, and other platforms because I want my profile to show the full picture: not just the code I write, but the curiosity, creativity, and consistency behind it.
+
+Right now, I’m focused on becoming a stronger builder, improving my technical depth, and creating projects that are practical, polished, and worth showing off.
 
 ---
 
@@ -170,17 +201,6 @@ Outside of coding, I like exploring design, games, and creative software. I’m 
     </td>
   </tr>
 </table>
-
-## 🌐 Socials:
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/tejas-govind-29520a2b2/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" />
-  </a>
-  <a href="mailto:tejasgov2005@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Email&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="email logo" />
-  </a>
-</div>
 
 ---
 
