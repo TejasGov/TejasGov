@@ -82,7 +82,7 @@ Right now, I’m focused on becoming a stronger builder, improving my technical 
     </td>
     <td align="center" width="70">
       <a href="https://expressjs.com" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" width="45" height="45" alt="express" />
+        <img src="https://icon.icepanel.io/Technology/svg/Azure.svg" />
       </a>
     </td>
     <td align="center" width="70">
@@ -134,7 +134,7 @@ Right now, I’m focused on becoming a stronger builder, improving my technical 
     </td>
     <td align="center" width="70">
       <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-        <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" width="45" height="45" alt="nextjs" />
+        <img src="https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png" />
       </a>
     </td>
     <td align="center" width="70">
@@ -199,6 +199,31 @@ Right now, I’m focused on becoming a stronger builder, improving my technical 
     <td align="center" width="70">
       <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" width="45" height="45" alt="vuejs" />
+      </a>
+    </td>
+    <td align="center" width="70">
+      <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/antigravity-color.png" width="45" height="45" alt="vuejs" />
+      </a>
+    </td>
+    <td align="center" width="70">
+      <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+        <img src="https://devicons.io/devicons/icons/openclaw.svg" width="45" height="45" alt="vuejs" />
+      </a>
+    </td>
+    <td align="center" width="70">
+      <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+        <img src="https://devicons.io/devicons/icons/lovable-icon.svg" width="45" height="45" alt="vuejs" />
+      </a>
+    </td>
+    <td align="center" width="70">
+      <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+        <img src="https://devicons.io/devicons/icons/claude-code.svg" width="45" height="45" alt="vuejs" />
+      </a>
+    </td>
+    <td align="center" width="70">
+      <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+        <img src="https://devicons.io/devicons/icons/kubernetes.svg" width="45" height="45" alt="vuejs" />
       </a>
     </td>
   </tr>
