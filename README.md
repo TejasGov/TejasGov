@@ -156,7 +156,7 @@ Right now, I’m focused on becoming a stronger builder, improving my technical 
     </td>
     <td align="center" width="70">
       <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" width="45" height="45" alt="photoshop" />
+        <img src="https://icon.icepanel.io/Technology/svg/Adobe-Premiere-Pro.svg" />
       </a>
     </td>
     <td align="center" width="70">
