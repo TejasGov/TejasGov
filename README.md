@@ -56,9 +56,6 @@
 </pre>
 
 </div>
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=&pause=1000&color=54F754&width=435&lines=Semper+Sursum%2C+Always+aim+high;Dreams+don't+work%2C+Unless+you+do!)](https://git.io/typing-svg)
-
 ---
 
 ## About me
