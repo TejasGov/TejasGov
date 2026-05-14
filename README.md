@@ -1,5 +1,4 @@
 <div align="left">
-  <img align="right" src="https://media1.tenor.com/m/mKfeCtD5EukAAAAC/the-office-the.gif" width="320" alt="The Office GIF" />
 
   <p style="font-size: 36px; font-weight: 700; margin-bottom: 0;">
     Hi, I'm Tejas 👋
