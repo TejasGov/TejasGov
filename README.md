@@ -246,7 +246,13 @@ Right now, I'm focused on becoming a stronger builder, improving my technical de
 </div>
 
 <div align="center" style="margin-top: 15px;">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TejasGov&layout=compact&theme=dracula&hide_border=true&size_weight=0.5&count_weight=0.5" alt="Languages" height="200" />
+  <h3>Languages</h3>
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-29%25-3178c6?style=flat" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-23%25-f7df1e?style=flat" />
+  <img alt="Python" src="https://img.shields.io/badge/Python-18%25-3776ab?style=flat" />
+  <img alt="HTML" src="https://img.shields.io/badge/HTML-15%25-e34c26?style=flat" />
+  <img alt="Jupyter Notebook" src="https://img.shields.io/badge/Jupyter-10%25-f37726?style=flat" />
+  <img alt="GDScript" src="https://img.shields.io/badge/GDScript-5%25-355570?style=flat" />
 </div>
 
 ---
