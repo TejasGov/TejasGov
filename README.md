@@ -59,13 +59,13 @@
 
 ## About me
 
-I’m Tejas, a developer who likes building things that feel as good as they work. I enjoy working across the stack, from clean frontend interfaces with React and Next.js to backend systems with Node.js, APIs, and data-driven features. I care about product thinking, user experience, and turning rough ideas into polished experiences.
+I'm Tejas, a developer who likes building things that feel as good as they work. I enjoy working across the stack, from clean frontend interfaces with React and Next.js to backend systems with Node.js, APIs, and data-driven features. I care about product thinking, user experience, and turning rough ideas into polished experiences.
 
-I’m drawn to projects where engineering meets creativity. That could be a full-stack web app, a real-time feature, a game prototype, a machine learning experiment, or a polished UI that makes an experience feel special.
+I'm drawn to projects where engineering meets creativity. That could be a full-stack web app, a real-time feature, a game prototype, a machine learning experiment, or a polished UI that makes an experience feel special.
 
-Outside of code, I’m into design, games, content creation, and exploring new tools that help me build better. I share my work across GitHub, YouTube, Kaggle, WordPress, and other platforms because I like building and learning in public.
+Outside of code, I'm into design, games, content creation, and exploring new tools that help me build better. I share my work across GitHub, YouTube, Kaggle, WordPress, and other platforms because I like building and learning in public.
 
-Right now, I’m focused on becoming a stronger builder, improving my technical depth, and creating projects that are practical, polished, and worth showing off.
+Right now, I'm focused on becoming a stronger builder, improving my technical depth, and creating projects that are practical, polished, and worth showing off.
 
 ---
 
@@ -245,8 +245,8 @@ Right now, I’m focused on becoming a stronger builder, improving my technical 
   <img src="https://streak-stats.demolab.com?user=TejasGov&locale=en&mode=daily&theme=dracula&hide_border=true&border_radius=5&order=3" height="150" alt="streak graph" />
 </div>
 
-<div align="center" style="margin-top: 20px;">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TejasGov&layout=pie&theme=dracula&hide_border=true" alt="Most used languages" width="500" />
+<div align="center" style="margin-top: 15px;">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TejasGov&layout=compact&theme=dracula&hide_border=true&size_weight=0.5&count_weight=0.5" alt="Languages" height="200" />
 </div>
 
 ---
