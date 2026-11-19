@@ -69,7 +69,8 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/campfire-under-stars-dark.gif" />
+    <source media="(prefers-color-scheme: dark)"
+            srcset="assets/campfire-under-stars-1920x1080.gif" />
     <img src="assets/campfire-under-stars-light.gif" width="720"
          alt="Campfire Under Stars, animated ASCII art" />
   </picture>
