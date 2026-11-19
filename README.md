@@ -13,6 +13,10 @@
 
 <br />
 
+<p align="center">
+  <em><code>thanks for stopping by · let's build something worth showing off</code></em>
+</p>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-dark.svg" />
   <img alt="About" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-light.svg" width="100%" />
@@ -67,13 +71,13 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 <br />
 <br />
 
-<p align="center">
+<details>
+<summary><code>warm up by the fire</code></summary>
+<br />
+<table align="center"><tr><td align="center" bgcolor="#0d1117" width="660" style="border-radius:12px; padding:10px;">
   <picture>
-    <source media="(prefers-color-scheme: dark)"
-            srcset="assets/campfire-under-stars-1920x1080.gif" />
-    <img src="assets/campfire-under-stars-light.gif" width="720"
-         alt="Campfire Under Stars, animated ASCII art" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/campfire-under-stars-1920x1080.gif" />
+    <img src="assets/campfire-under-stars-light.gif" width="640" alt="Campfire Under Stars, animated ASCII art" />
   </picture>
-  <br />
-  <strong>Thanks for stopping by. Let's build something worth showing off.</strong>
-</p>
+</td></tr></table>
+</details>
