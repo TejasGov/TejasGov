@@ -22,9 +22,9 @@
   <img alt="About" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-light.svg" width="100%" />
 </picture>
 
-I'm Tejas, a CS student at the **University at Buffalo** who likes building things that feel as good as they work. I work across the stack, from clean interfaces in React and Next.js to Node.js backends and machine-learning experiments.
+I'm Tejas, a CS student at the **University at Buffalo** who likes building things that feel as good as they work. I work across the stack, from clean interfaces in React and Next.js to Node.js backends and data pipelines. Right now I'm most interested in machine learning, real-time systems and tools that give people more control over their information.
 
-I'm drawn to the places where engineering meets creativity: browser games, real-time features, machine-learning experiments, and UI that makes an experience feel special. Outside of code I'm into exploring new ideas and making things that people enjoy using.
+I'm drawn to the places where engineering meets creativity: browser games, real-time features, machine-learning experiments, and UI that makes an experience feel special. Outside of code I'm into football, hip-hop and chess—usually looking for the small details that make a system, a song or a move feel better than it had to be.
 
 > **Right now:** becoming a stronger builder, going deeper technically, and shipping projects that are practical, polished and worth showing off.
 
@@ -45,7 +45,7 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 </p>
 <p align="center">
   <sub>
-    Try them live&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://stratos-eosin.vercel.app">Stratos</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://yudhveer.pages.dev/">Yudhveer</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://echoscribe.vercel.app">EchoScribe</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://socra-mvp.vercel.app">Socra</a>
+    Try them live&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://stratos-eosin.vercel.app">Stratos</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://yudhveer.pages.dev/">Yudhveer</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://echoscribe.vercel.app/">EchoScribe</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://socra-mvp.vercel.app/">Socra</a>
   </sub>
 </p>
 
@@ -56,7 +56,7 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
   <img alt="Toolkit" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/toolkit-light.svg" width="100%" />
 </picture>
 
-<img src="assets/toolkit.svg" width="100%" alt="Languages: TypeScript, JavaScript, Python, Java, C, HTML, CSS. Frontend: React, Next.js, Vue, Tailwind, Three.js, Framer Motion. Backend and cloud: Node.js, Express, PostgreSQL, MongoDB, Firebase, AWS." />
+<img src="assets/toolkit.svg" width="100%" alt="Languages: TypeScript, JavaScript, Python, Java, C, HTML, CSS. Frontend: React, Next.js, Vue, Tailwind, Three.js, Framer Motion. Backend and cloud: Node.js, Express, FastAPI, PostgreSQL, MongoDB, Redis, Firebase, AWS, Docker, GitHub Actions. AI and data: PyTorch, scikit-learn, Transformers, pandas, NumPy, OpenAI API. Design and tools: Figma, Git, Linux, Postman, Vercel." />
 
 <br />
 <br />
@@ -66,18 +66,16 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
   <img alt="Activity" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/activity-light.svg" width="100%" />
 </picture>
 
-<img src="https://raw.githubusercontent.com/TejasGov/TejasGov/output/activity.svg" width="100%" alt="The last 12 months of contributions as an isometric skyline, with streaks and top languages. Refer to the contribution graph for details." />
+<img src="https://raw.githubusercontent.com/TejasGov/TejasGov/output/activity.svg" width="100%" alt="The last 12 months of contributions as an isometric skyline, with streaks and top languages. Rebuilt automatically by the Activity Snippet workflow." />
 
 <br />
 <br />
 
-<details>
-<summary><code>warm up by the fire</code></summary>
-<br />
-<table align="center"><tr><td align="center" bgcolor="#0d1117" width="660" style="border-radius:12px; padding:10px;">
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/campfire-under-stars-1920x1080.gif" />
     <img src="assets/campfire-under-stars-light.gif" width="640" alt="Campfire Under Stars, animated ASCII art" />
   </picture>
-</td></tr></table>
-</details>
+  <br />
+  <code><strong>thanks for stopping by · let's build something worth showing off</strong></code>
+</p>
