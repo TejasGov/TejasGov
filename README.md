@@ -13,10 +13,6 @@
 
 <br />
 
-<p align="center">
-  <em><code>thanks for stopping by · let's build something worth showing off</code></em>
-</p>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-dark.svg" />
   <img alt="About" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-light.svg" width="100%" />
