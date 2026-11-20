@@ -1,4 +1,4 @@
-<img src="assets/header.svg" width="100%" alt="Tejas Govind. CS student at the University at Buffalo, building browser games, real-time web apps and machine-learning experiments." />
+<img src="assets/header.svg" width="100%" alt="Tejas Govind. Software engineer studying CS at the University at Buffalo. SWE intern at Daiwa Capital Markets America. I ship real-time web apps, games and applied ML." />
 
 <p align="center">
   <a href="https://www.linkedin.com/in/tejas-govind-29520a2b2/"><img src="assets/keys/linkedin.svg" width="11%" alt="LinkedIn" /></a>
@@ -18,12 +18,29 @@
   <img alt="About" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/about-light.svg" width="100%" />
 </picture>
 
-I'm Tejas, a CS student at the **University at Buffalo** who likes building things that feel as good as they work. I work across the stack, from clean interfaces in React and Next.js to Node.js backends and data pipelines. Right now I'm most interested in machine learning, real-time systems and tools that give people more control over their information.
+I'm Tejas, a software engineer studying CS at the **University at Buffalo**, currently a **Software Engineering Intern at Daiwa Capital Markets America** and **co-founder of COA**, an agentic SaaS startup. I build across the stack, from React and Next.js interfaces to Node.js and FastAPI backends, and I've shipped four products you can use today in a browser.
 
-I'm drawn to the places where engineering meets creativity: browser games, real-time features, machine-learning experiments, and UI that makes an experience feel special. Outside of code I'm into football, hip-hop and chess—usually looking for the small details that make a system, a song or a move feel better than it had to be.
+**What I bring to a team**
 
-> **Right now:** becoming a stronger builder, going deeper technically, and shipping projects that are practical, polished and worth showing off.
+- **I ship real software.** Two browser games built on Three.js and WebGL, a clinical AI scribe and an AI tutor, all deployed and live. One of them has a 114-test suite behind it.
+- **I work on AI that does real work.** Speech-to-text and BioNLP pipelines for doctors, Socratic tutoring for CS students, and agentic workflows at COA.
+- **I care how it feels.** Real-time 3D, motion and detailed UI are where I do my best work, and this profile is made the same way.
+- **I've worked well beyond code.** Research on VR and moral decisions, data analysis in SQL and Tableau, and leadership roles reaching 800+ students at UB.
 
+Off the keyboard I'm into football, hip-hop and chess, which all come down to small details done well.
+
+> **Open to:** software engineering, full-stack and applied-ML roles. The fastest way to reach me is [email](mailto:tejasgov2005@gmail.com) or [LinkedIn](https://www.linkedin.com/in/tejas-govind-29520a2b2/).
+
+<br />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/experience-dark.svg" />
+  <img alt="Experience" src="https://raw.githubusercontent.com/TejasGov/TejasGov/main/assets/titles/experience-light.svg" width="100%" />
+</picture>
+
+<img src="assets/experience.svg" width="100%" alt="Experience. 4 products live, 114 tests on Stratos, 3,000+ contributions in 12 months, 800+ students reached at UB. Software Engineering Intern at Daiwa Capital Markets America (June 2026 to now), Co-founder of COA (May 2026 to now), Outreach Chair at the Society of Computing at UB (Fall 2026 to now), Data Analyst Trainee at MedTourEasy (June 2025), Undergraduate Research Assistant at UB College of Arts and Sciences (February 2025 to now)." />
+
+<br />
 <br />
 
 <picture>
@@ -32,7 +49,7 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 </picture>
 
 <p align="center">
-  <a href="https://github.com/TejasGov/Stratos"><img src="assets/projects/stratos.svg" width="49%" alt="Stratos, an open-world fighter jet game for the browser" /></a>
+  <a href="https://github.com/TejasGov/Stratos"><img src="assets/projects/stratos.svg" width="49%" alt="Stratos, an open-world flight game for the browser with volumetric storms and a 114-test suite" /></a>
   <a href="https://github.com/TejasGov/Yudhveer"><img src="assets/projects/yudhveer.svg" width="49%" alt="Yudhveer, an Indian mythological action game" /></a>
 </p>
 <p align="center">
@@ -41,7 +58,7 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 </p>
 <p align="center">
   <sub>
-    Try them live&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://stratos-eosin.vercel.app">Stratos</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://yudhveer.pages.dev/">Yudhveer</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://echoscribe.vercel.app/">EchoScribe</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://socra-mvp.vercel.app/">Socra</a>
+    All four are live. Try them&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://stratos-eosin.vercel.app">Stratos</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://yudhveer.pages.dev/">Yudhveer</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://echoscribe.vercel.app/">EchoScribe</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://socra-mvp.vercel.app/">Socra</a>
   </sub>
 </p>
 

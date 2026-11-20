@@ -40,8 +40,8 @@ PROJECTS = [
         "slug": "stratos",
         "name": "Stratos",
         "kind": "FLIGHT GAME",
-        "desc": "An open-world fighter jet game for the browser, with physically based skies, "
-                "volumetric storms and nine jets, from the wavetops to the edge of space.",
+        "desc": "Open-world flight game that runs in any browser: raymarched volumetric storms, "
+                "physically based skies and nine flyable jets, backed by a 114-test suite.",
         "stack": ["Three.js", "WebGL 2", "Rapier", "TypeScript"],
         "art": ("photo", "https://raw.githubusercontent.com/TejasGov/Stratos/HEAD/docs/images/edge-of-space.jpg", 0.40),
         "caption": "FIG. 2  THE EDGE OF SPACE, IN ENGINE",
@@ -50,8 +50,8 @@ PROJECTS = [
         "slug": "yudhveer",
         "name": "Yudhveer",
         "kind": "ACTION GAME",
-        "desc": "An Indian mythological action game. Cel-shaded sword-and-shield combat across "
-                "five worlds, with bosses that block and parry back.",
+        "desc": "Indian mythological action game, playable on the web. Physics-driven sword-and-shield "
+                "combat across five worlds, with boss AI that blocks and parries back.",
         "stack": ["Three.js", "Rapier", "TypeScript", "Vite"],
         "art": ("photo", "https://raw.githubusercontent.com/TejasGov/Yudhveer/HEAD/docs/media/08-summit-eclipse.jpg", 0.42),
         "caption": "FIG. 3  THE SUMMIT, UNDER ECLIPSE",
@@ -60,8 +60,8 @@ PROJECTS = [
         "slug": "echoscribe",
         "name": "EchoScribe",
         "kind": "CLINICAL AI",
-        "desc": "An ambient clinical scribe that turns doctor–patient conversations into "
-                "structured, FHIR-ready SOAP notes in real time.",
+        "desc": "Ambient clinical AI that listens to doctor–patient visits and writes structured, "
+                "FHIR R4-ready SOAP notes in real time, with Whisper and BioNLP entity linking.",
         "stack": ["React", "FastAPI", "BioNLP", "FHIR R4"],
         "art": ("ridgeline",),
         "caption": "FIG. 4  A CONVERSATION, AS IT HAPPENS",
@@ -70,8 +70,8 @@ PROJECTS = [
         "slug": "socra",
         "name": "Socra",
         "kind": "AI FOR EDUCATION",
-        "desc": "A Socratic AI learning platform for UB's intro CS courses: guided hints, "
-                "sandboxed code runs, adaptive practice and faculty analytics.",
+        "desc": "AI tutor for UB's intro CS courses that guides instead of giving answers: "
+                "hint ladders, sandboxed code runs, adaptive practice, faculty analytics.",
         "stack": ["TypeScript", "Postgres", "Redis", "Docker"],
         "art": ("solid",),
         "caption": "FIG. 5  PLATO'S DODECAHEDRON, IN ASCII",
@@ -102,7 +102,7 @@ KEYS = [
 ]
 ACCENT_KEY = "email"
 
-SECTIONS = [("about", "About"), ("work", "Selected work"), ("toolkit", "Toolkit"), ("activity", "Activity")]
+SECTIONS = [("about", "About"), ("experience", "Experience"), ("work", "Selected work"), ("toolkit", "Toolkit"), ("activity", "Activity")]
 
 
 # ── helpers ─────────────────────────────────────────────────────────────────
@@ -209,11 +209,12 @@ def header():
     # type
     name = (text(SERIF, "Tejas", 148, x0 - 6, 214, TEXT, track=-2)
             + text(SERIF, "Govind", 148, x0 - 6, 336, TEXT, track=-2))
-    lines = wrap(SANS, "CS student at the University at Buffalo, building browser games, "
-                       "real-time web apps and machine-learning experiments.", 19, 470)
+    lines = wrap(SANS, "Software engineer studying CS at the University at Buffalo. "
+                       "SWE intern at Daiwa Capital Markets America. I ship real-time web apps, "
+                       "games and applied ML.", 19, 470)
     statement = "".join(text(SANS, line, 19, x0, 390 + i * 28, SOFT) for i, line in enumerate(lines))
     meta, mx_ = [], x0
-    for i, label in enumerate(["FULL-STACK", "GAMES", "APPLIED ML"]):
+    for i, label in enumerate(["FULL-STACK", "APPLIED ML", "REAL-TIME 3D"]):
         meta.append(text(MONO, label, 12, mx_, 474, MUTED, track=1.6))
         mx_ += MONO.width(label, 12, 1.6)
         if i < 2:
@@ -244,8 +245,7 @@ def header():
         + ".tw{animation:tw 3.2s ease-in-out infinite alternate}@keyframes tw{from{opacity:.15}to{opacity:1}}"
         + moon_css + corona_css + REDUCED_MOTION
     )
-    write("header.svg", document(W, H, "Tejas Govind. CS student at the University at Buffalo, building browser games, "
-                                       "real-time web apps and machine-learning experiments.", body, css))
+    write("header.svg", document(W, H, "Tejas Govind. " + " ".join(lines), body, css))
 
 
 # ── keycaps ─────────────────────────────────────────────────────────────────
@@ -431,6 +431,62 @@ def toolkit():
     write("toolkit.svg", document(W, H, f"Toolkit. {names}", "<defs>" + defs + "</defs>" + open_ + "".join(blocks) + close))
 
 
+# ── experience ──────────────────────────────────────────────────────────────
+STATS = [
+    ("4", "PRODUCTS LIVE"),
+    ("114", "TESTS ON STRATOS"),
+    ("3,000+", "CONTRIBUTIONS / 12 MO"),
+    ("800+", "STUDENTS REACHED AT UB"),
+]
+ROLES = [
+    ("JUN 2026 — NOW", "Software Engineering Intern", "Daiwa Capital Markets America", "NEW YORK, NY", True,
+     "Automating day-to-day corporate and financial workflows at the US arm of a global investment bank."),
+    ("MAY 2026 — NOW", "Co-founder", "COA", "REMOTE", True,
+     "Building an agentic B2C SaaS that solves the context layer for cross-platform workflows."),
+    ("FALL 2026 — NOW", "Outreach Chair", "Society of Computing at UB", "BUFFALO, NY", True,
+     "Connecting CS students with industry and the wider university community."),
+    ("JUN 2025", "Data Analyst Trainee", "MedTourEasy", "REMOTE", False,
+     "Cleaned and wrangled real healthcare data with SQL, then turned the EDA into Tableau insights."),
+    ("FEB 2025 — NOW", "Undergraduate Research Assistant", "UB College of Arts & Sciences", "BUFFALO, NY", True,
+     "Researching how VR and immersive media shape moral decisions, across age groups."),
+]
+
+
+def experience():
+    W, pad = 1200, 44
+    out = []
+    # stats strip
+    cw = (W - 2 * pad) / len(STATS)
+    for i, (big, label) in enumerate(STATS):
+        x = pad + i * cw
+        if i:
+            out.append(f'<rect x="{num(x - 1)}" y="{pad + 4}" width="1" height="74" fill="{LINE}"/>')
+        tx = x + (22 if i else 0)
+        out.append(text(SERIF, big, 54, tx, pad + 50, TEXT, track=-0.8))
+        out.append(text(MONO, label, 11, tx + 2, pad + 76, DIM, track=1.5))
+    y = pad + 120
+    out.append(f'<rect x="{pad}" y="{y}" width="{W - 2 * pad}" height="1" fill="{LINE}"/>')
+    y += 50
+    row_h = 96
+    tl = pad + 196  # timeline x
+    out.append(f'<rect x="{tl}" y="{y - 14}" width="1" height="{row_h * (len(ROLES) - 1) + 28}" fill="{LINE}"/>')
+    for i, (period, role, org, place, now, line) in enumerate(ROLES):
+        ry = y + i * row_h
+        out.append(text(MONO, period, 11.5, pad, ry + 6, MUTED if now else DIM, track=1.4))
+        out.append(f'<circle cx="{tl + .5}" cy="{ry + 2}" r="5" fill="{SAFFRON if now else FAINT}"/>'
+                   + (f'<circle cx="{tl + .5}" cy="{ry + 2}" r="10" fill="{SAFFRON}" opacity=".18"/>' if now else ""))
+        x = tl + 32
+        out.append(text(SERIF, role, 30, x, ry + 10, TEXT, track=-0.4))
+        out.append(text(SANS_M, org, 16, x + SERIF.width(role, 30, -0.4) + 14, ry + 9, SAFFRON if i == 0 else SOFT))
+        out.append(text(MONO, place, 11, W - pad, ry + 6, DIM, anchor="end", track=1.4))
+        out.append(text(SANS, line, 16, x, ry + 40, MUTED))
+    H = y + row_h * (len(ROLES) - 1) + 60 + pad - 20
+    defs, open_, close = panel(W, H, 22)
+    alt = ("Experience. " + "; ".join(f"{b} {l.lower()}" for b, l in STATS) + ". "
+           + " ".join(f"{r} at {o}, {p.lower()}: {d}" for p, r, o, _, _, d in ROLES))
+    write("experience.svg", document(W, H, alt, "<defs>" + defs + "</defs>" + open_ + "".join(out) + close))
+
+
 # ── footer ──────────────────────────────────────────────────────────────────
 def campfire_gif(src, box, width, colors=64, bg=(12, 14, 29)):
     """Crop the letterboxing off the source GIF, shrink it, swap its black for the
@@ -509,4 +565,5 @@ if __name__ == "__main__":
     for project in PROJECTS:
         project_card(project)
     toolkit()
+    experience()
     footer()
