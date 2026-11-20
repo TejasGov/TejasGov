@@ -18,7 +18,7 @@ import numpy as np
 from PIL import Image
 
 import ascii3d as a3
-from kit import ASSETS as ASSETS_DIR
+from kit import ASSETS as ASSETS_DIR, num4
 from kit import (
     DIM, EMBER, FAINT, INK, INK_DEEP, LIGHT_ACCENT, LIGHT_MUTED, LIGHT_TEXT, LINE, MARIGOLD, MUTED,
     REDUCED_MOTION, SAFFRON, SOFT, TEXT, ascii_css, ascii_runs, document, fetch, font, num, panel,
@@ -396,17 +396,48 @@ def project_card(p):
     write(f"projects/{p['slug']}.svg", document(W, H, f"{p['name']}. {p['desc']}", body, css + REDUCED_MOTION))
 
 
+# Toolkit logos: simple-icons (CC0) where it has them, else devicon (MIT) or lobe-icons (MIT).
+SI, DEV, LOBE = ("https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/{}.svg",
+                 "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/{}.svg",
+                 "https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@1.104.0/icons/{}.svg")
+LOGOS = {
+    "TypeScript": (SI, "typescript"), "JavaScript": (SI, "javascript"), "Python": (SI, "python"),
+    "Java": (SI, "openjdk"), "C": (SI, "c"), "HTML": (SI, "html5"), "CSS": (SI, "css"),
+    "React": (SI, "react"), "Next.js": (SI, "nextdotjs"), "Vue": (SI, "vuedotjs"), "Tailwind": (SI, "tailwindcss"),
+    "Three.js": (SI, "threedotjs"), "Framer Motion": (SI, "framer"),
+    "Node.js": (SI, "nodedotjs"), "Firebase": (SI, "firebase"), "MongoDB": (SI, "mongodb"), "MySQL": (SI, "mysql"),
+    "AWS": (DEV, "amazonwebservices/amazonwebservices-plain-wordmark"), "Google Cloud": (SI, "googlecloud"),
+    "Azure": (DEV, "azure/azure-plain"), "Kubernetes": (SI, "kubernetes"), "Vercel": (SI, "vercel"),
+    "PyTorch": (SI, "pytorch"), "TensorFlow": (SI, "tensorflow"), "scikit-learn": (SI, "scikitlearn"),
+    "OpenCV": (SI, "opencv"), "pandas": (SI, "pandas"),
+    "Figma": (SI, "figma"), "Premiere Pro": (DEV, "premierepro/premierepro-plain"), "Godot": (SI, "godotengine"),
+    "Claude Code": (SI, "claude"), "Lovable": (LOBE, "lovable"), "Antigravity": (LOBE, "antigravity"),
+    "OpenClaw": (LOBE, "openclaw"),
+}
+
+
+def logo(item, x, y, size, fill):
+    """The item's logo as one-colour paths in a size×size box with its top-left at (x, y)."""
+    src, name = LOGOS[item]
+    raw = fetch(src.format(name), "logo-" + name.replace("/", "-") + ".svg").read_text()
+    vb = float(re.search(r'viewBox="0 0 ([\d.]+)', raw).group(1))
+    rule = ' fill-rule="evenodd"' if 'fill-rule="evenodd"' in raw else ""
+    paths = "".join(f'<path d="{d}"/>' for d in re.findall(r'<path[^>]*?\sd="([^"]+)"', raw) if d != "M0 0h24v24H0z")
+    return f'<g fill="{fill}"{rule} transform="translate({num(x)} {num(y)}) scale({num4(size / vb)})">{paths}</g>'
+
+
 # ── toolkit ─────────────────────────────────────────────────────────────────
 def toolkit():
     W = 1200
     pad, label_w, line_h, gap_y = 44, 250, 34, 30
     size, sep = 21, 27
+    icon, icon_gap = 18, 8
     max_x = W - pad
     blocks, y = [], pad + 4
     for i, (label, items) in enumerate(TOOLKIT):
         lines, line, x = [], [], pad + label_w
         for item in items:
-            w = SANS.width(item, size, -0.2)
+            w = SANS.width(item, size, -0.2) + icon + icon_gap
             if line and x + w > max_x:
                 lines.append(line)
                 line, x = [], pad + label_w
@@ -419,9 +450,10 @@ def toolkit():
         for k, line in enumerate(lines):
             ly = y + 20 + k * line_h
             for j, (item, x) in enumerate(line):
-                blocks.append(text(SANS, item, size, x, ly, TEXT, track=-0.2))
+                blocks.append(logo(item, x, ly - 16, icon, SOFT))
+                blocks.append(text(SANS, item, size, x + icon + icon_gap, ly, TEXT, track=-0.2))
                 if j < len(line) - 1 or k < len(lines) - 1:
-                    sx = x + SANS.width(item, size, -0.2) + sep / 2 - 1.5
+                    sx = x + icon + icon_gap + SANS.width(item, size, -0.2) + sep / 2 - 1.5
                     if j < len(line) - 1:
                         blocks.append(f'<rect x="{num(sx)}" y="{ly - 8}" width="3" height="3" fill="{FAINT}"/>')
         y += line_h * len(lines) + gap_y
