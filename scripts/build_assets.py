@@ -10,6 +10,7 @@ CC0) and project screenshots are downloaded once into scripts/.cache/.
 """
 
 import base64
+import json
 import io
 import math
 import re
@@ -396,7 +397,8 @@ def project_card(p):
     write(f"projects/{p['slug']}.svg", document(W, H, f"{p['name']}. {p['desc']}", body, css + REDUCED_MOTION))
 
 
-# Toolkit logos: simple-icons (CC0) where it has them, else devicon (MIT) or lobe-icons (MIT).
+# Toolkit logos in brand colour: simple-icons (CC0) where it has them, else the colour
+# artwork from devicon (MIT) or lobe-icons (MIT), nested as-is to keep their gradients.
 SI, DEV, LOBE = ("https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/{}.svg",
                  "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/{}.svg",
                  "https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@1.104.0/icons/{}.svg")
@@ -406,24 +408,41 @@ LOGOS = {
     "React": (SI, "react"), "Next.js": (SI, "nextdotjs"), "Vue": (SI, "vuedotjs"), "Tailwind": (SI, "tailwindcss"),
     "Three.js": (SI, "threedotjs"), "Framer Motion": (SI, "framer"),
     "Node.js": (SI, "nodedotjs"), "Firebase": (SI, "firebase"), "MongoDB": (SI, "mongodb"), "MySQL": (SI, "mysql"),
-    "AWS": (DEV, "amazonwebservices/amazonwebservices-plain-wordmark"), "Google Cloud": (SI, "googlecloud"),
-    "Azure": (DEV, "azure/azure-plain"), "Kubernetes": (SI, "kubernetes"), "Vercel": (SI, "vercel"),
+    "AWS": (DEV, "amazonwebservices/amazonwebservices-original-wordmark"), "Google Cloud": (SI, "googlecloud"),
+    "Azure": (DEV, "azure/azure-original"), "Kubernetes": (SI, "kubernetes"), "Vercel": (SI, "vercel"),
     "PyTorch": (SI, "pytorch"), "TensorFlow": (SI, "tensorflow"), "scikit-learn": (SI, "scikitlearn"),
     "OpenCV": (SI, "opencv"), "pandas": (SI, "pandas"),
-    "Figma": (SI, "figma"), "Premiere Pro": (DEV, "premierepro/premierepro-plain"), "Godot": (SI, "godotengine"),
-    "Claude Code": (SI, "claude"), "Lovable": (LOBE, "lovable"), "Antigravity": (LOBE, "antigravity"),
-    "OpenClaw": (LOBE, "openclaw"),
+    "Figma": (SI, "figma"), "Premiere Pro": (DEV, "premierepro/premierepro-original"), "Godot": (SI, "godotengine"),
+    "Claude Code": (SI, "claude"), "Lovable": (LOBE, "lovable-color"), "Antigravity": (LOBE, "antigravity-color"),
+    "OpenClaw": (LOBE, "openclaw-color"),
 }
+DARK_FILLS = {"#252f3e"}  # AWS's navy wordmark text, invisible on the ink card
 
 
-def logo(item, x, y, size, fill):
-    """The item's logo as one-colour paths in a size×size box with its top-left at (x, y)."""
+def brand_hex(slug):
+    data = json.loads(fetch("https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/data/simple-icons.json",
+                            "si-data.json").read_text(encoding="utf-8"))
+    hexes = {i.get("slug") or re.sub(r"[^a-z0-9]", "", i["title"].lower()): i["hex"] for i in data}
+    h = hexes[slug]
+    r, g, b = (int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
+    # near-black marks (Next.js, Vercel, Three.js) would vanish on the dark card
+    return TEXT if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.12 else "#" + h
+
+
+def logo(item, x, y, size):
+    """The item's logo in brand colour in a size×size box with its top-left at (x, y)."""
     src, name = LOGOS[item]
-    raw = fetch(src.format(name), "logo-" + name.replace("/", "-") + ".svg").read_text()
-    vb = float(re.search(r'viewBox="0 0 ([\d.]+)', raw).group(1))
-    rule = ' fill-rule="evenodd"' if 'fill-rule="evenodd"' in raw else ""
-    paths = "".join(f'<path d="{d}"/>' for d in re.findall(r'<path[^>]*?\sd="([^"]+)"', raw) if d != "M0 0h24v24H0z")
-    return f'<g fill="{fill}"{rule} transform="translate({num(x)} {num(y)}) scale({num4(size / vb)})">{paths}</g>'
+    raw = fetch(src.format(name), "logo-" + name.replace("/", "-") + ".svg").read_text(encoding="utf-8")
+    vb = re.search(r'viewBox="([^"]+)"', raw).group(1)
+    if src == SI:
+        d = re.search(r'<path d="([^"]+)"', raw).group(1)
+        return (f'<g fill="{brand_hex(name)}" transform="translate({num(x)} {num(y)}) scale({num4(size / 24)})">'
+                f'<path d="{d}"/></g>')
+    inner = re.sub(r"^.*?<svg[^>]*>|</svg>\s*$", "", raw, flags=re.S)
+    inner = re.sub(r"<title>.*?</title>", "", inner)
+    for dark in DARK_FILLS:
+        inner = inner.replace(f'fill="{dark}"', f'fill="{TEXT}"')
+    return f'<svg x="{num(x)}" y="{num(y)}" width="{size}" height="{size}" viewBox="{vb}">{inner}</svg>'
 
 
 # ── toolkit ─────────────────────────────────────────────────────────────────
@@ -450,7 +469,7 @@ def toolkit():
         for k, line in enumerate(lines):
             ly = y + 20 + k * line_h
             for j, (item, x) in enumerate(line):
-                blocks.append(logo(item, x, ly - 16, icon, SOFT))
+                blocks.append(logo(item, x, ly - 16, icon))
                 blocks.append(text(SANS, item, size, x + icon + icon_gap, ly, TEXT, track=-0.2))
                 if j < len(line) - 1 or k < len(lines) - 1:
                     sx = x + icon + icon_gap + SANS.width(item, size, -0.2) + sep / 2 - 1.5
