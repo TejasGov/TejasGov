@@ -18,6 +18,7 @@ import numpy as np
 from PIL import Image
 
 import ascii3d as a3
+from kit import ASSETS as ASSETS_DIR
 from kit import (
     DIM, EMBER, FAINT, INK, INK_DEEP, LIGHT_ACCENT, LIGHT_MUTED, LIGHT_TEXT, LINE, MARIGOLD, MUTED,
     REDUCED_MOTION, SAFFRON, SOFT, TEXT, ascii_css, ascii_runs, document, fetch, font, num, panel,
@@ -431,28 +432,72 @@ def toolkit():
 
 
 # ── footer ──────────────────────────────────────────────────────────────────
+def campfire_gif(src, box, width, colors=64, bg=(12, 14, 29)):
+    """Crop the letterboxing off the source GIF, shrink it, swap its black for the
+    card's ink, and store each frame as a delta on the last (unchanged pixels go
+    transparent) so 80 frames fit in a few MB instead of 16."""
+    im = Image.open(src)
+    rgbs = []
+    for i in range(im.n_frames):
+        im.seek(i)
+        rgb = im.convert("RGB").crop(box)
+        rgb = rgb.resize((width, round(width * rgb.height / rgb.width)), Image.LANCZOS)
+        a = np.asarray(rgb).copy()
+        a[a.max(axis=2) < 22] = bg
+        rgbs.append(a)
+    pal_img = Image.fromarray(np.concatenate(rgbs[::4], 0)).quantize(colors, dither=Image.Dither.NONE)
+    palette = pal_img.getpalette()[:colors * 3] + [0] * ((255 - colors) * 3) + [0, 0, 0]
+    frames, prev = [], None
+    for a in rgbs:
+        idx = np.asarray(Image.fromarray(a).quantize(palette=pal_img, dither=Image.Dither.NONE)).copy()
+        if prev is not None:
+            same = idx == prev
+            prev = idx.copy()
+            idx[same] = 255  # transparent: keep last frame's pixel
+        else:
+            prev = idx.copy()
+        f = Image.fromarray(idx, "P")
+        f.putpalette(palette)
+        frames.append(f)
+    buf = io.BytesIO()
+    frames[0].save(buf, "GIF", save_all=True, append_images=frames[1:], duration=im.info.get("duration", 50),
+                   loop=0, transparency=255, disposal=1, optimize=False)
+    return buf.getvalue(), frames[0].size, len(frames)
+
+
 def footer():
-    W, H = 1200, 260
-    cx, cy, R = 600, 452, 250
-    cols, rows = int(W / CW) + 1, int(H / CH) + 1
-    variants = []
-    for k, drift in enumerate((0.0, 0.7, 1.4)):
-        grid = a3.corona(cols, rows, CW, CH, cx, cy, R, seed=9, sun=(0.0, -1.0), drift=drift, sparkle=k, spread=0.5)
-        variants.append(ascii_runs(grid, 0, CH * 0.78, CW, CH))
-    glow, glow_css = cycle(variants, 2.4, "cr", order=[0, 1, 2, 1])
+    W, H = 1200, 820
+    gif, (gw, gh), n = campfire_gif(ASSETS_DIR / "campfire-under-stars-1920x1080.gif", (168, 60, 1752, 1017), 960)
+    gx, gy = (W - gw) // 2, 64
+    uri = "data:image/gif;base64," + base64.b64encode(gif).decode()
+    fx, fy = gx + gw * 0.585, gy + gh * 0.8  # the fire, for the warm glow
+    edge = lambda gid, x1, y1, x2, y2, a, b: (
+        f'<linearGradient id="{gid}" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}">'
+        f'<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="{a}" stop-color="#fff"/>'
+        f'<stop offset="{b}" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
     defs, open_, close = panel(W, H, 26)
     body = (
-        "<defs>" + defs + "</defs>" + open_
-        + f'<g class="a">{ascii_stars(41, W, 150, 36, avoid=[(300, 30, 900, 140)], twinkle=4)}{glow}</g>'
-        + f'<circle cx="{cx}" cy="{cy}" r="{R * 0.995}" fill="{INK_DEEP}"/>'
-        + text(SERIF, "Thanks for stopping by.", 50, 600, 98, TEXT, anchor="middle", track=-0.5)
-        + text(MONO, "LET'S BUILD SOMETHING WORTH SHOWING OFF", 12, 600, 132, MUTED, anchor="middle", track=2.4)
+        "<defs>" + defs
+        + f'<radialGradient id="warm" cx="{num(fx)}" cy="{num(fy)}" r="460" gradientUnits="userSpaceOnUse">'
+          f'<stop offset="0" stop-color="#FF8A3D" stop-opacity=".16"/><stop offset="1" stop-color="#FF8A3D" stop-opacity="0"/></radialGradient>'
+        + edge("fx", 0, 0, 1, 0, .2, .8) + edge("fy", 0, 0, 0, 1, .12, .78)
+        + f'<mask id="fade" maskUnits="userSpaceOnUse" x="{gx}" y="{gy}" width="{gw}" height="{gh}">'
+          f'<rect x="{gx}" y="{gy}" width="{gw}" height="{gh}" fill="url(#fx)"/></mask>'
+        + f'<mask id="fade2" maskUnits="userSpaceOnUse" x="{gx}" y="{gy}" width="{gw}" height="{gh}">'
+          f'<rect x="{gx}" y="{gy}" width="{gw}" height="{gh}" fill="url(#fy)"/></mask>'
+        + "</defs>" + open_
+        + f'<rect width="{W}" height="{H}" fill="url(#warm)"/>'
+        + f'<g mask="url(#fade)"><g mask="url(#fade2)"><image x="{gx}" y="{gy}" width="{gw}" height="{gh}" href="{uri}"/></g></g>'
+        + text(MONO, "FIG. 5  CAMPFIRE UNDER STARS", 12, 48, 50, DIM, track=1.6)
+        + text(MONO, f"{n} FRAMES · ASCII", 12, W - 48, 50, DIM, anchor="end", track=1.6)
+        + f'<rect x="48" y="{H - 132}" width="{W - 96}" height="1" fill="{LINE}"/>'
+        + text(SERIF, "Thanks for stopping by.", 50, 600, H - 68, TEXT, anchor="middle", track=-0.5)
+        + text(MONO, "LET'S BUILD SOMETHING WORTH SHOWING OFF", 12, 600, H - 36, MUTED, anchor="middle", track=2.4)
+        + f'<rect x="{600 - 3}" y="{H - 126}" width="6" height="6" fill="{SAFFRON}" transform="rotate(45 600 {H - 123})"/>'
         + close
     )
-    css = (ascii_css(FS, {"w": "#FFF4E2", "h": MARIGOLD, "s": SAFFRON, "e": "#D9703A", "d": "#7A4630", "t0": FAINT, "t1": DIM})
-           + ".tw{animation:tw 3.2s ease-in-out infinite alternate}@keyframes tw{from{opacity:.15}to{opacity:1}}"
-           + glow_css + REDUCED_MOTION)
-    write("footer.svg", document(W, H, "Thanks for stopping by. Let's build something worth showing off.", body, css))
+    write("footer.svg", document(W, H, "Campfire under stars, animated ASCII art. Thanks for stopping by. "
+                                       "Let's build something worth showing off.", body))
 
 
 if __name__ == "__main__":

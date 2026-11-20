@@ -71,11 +71,4 @@ I'm drawn to the places where engineering meets creativity: browser games, real-
 <br />
 <br />
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/campfire-under-stars-1920x1080.gif" />
-    <img src="assets/campfire-under-stars-light.gif" width="640" alt="Campfire Under Stars, animated ASCII art" />
-  </picture>
-  <br />
-  <code><strong>thanks for stopping by · let's build something worth showing off</strong></code>
-</p>
+<img src="assets/footer.svg" width="100%" alt="Campfire under stars, animated ASCII art. Thanks for stopping by, let's build something worth showing off." />
